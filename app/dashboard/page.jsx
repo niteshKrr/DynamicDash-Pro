@@ -2,8 +2,8 @@ import {cards} from "../lib/data"
 import Card from '../components/dashboard/card/Card'
 import Transactions from '../components/dashboard/transactions/Transactions'
 import Chart from '../components/dashboard/chart/Chart'
-import RightBar from '../components/dashboard/rightbar/RightBar'
 import styles from "../components/dashboard/dashboard.module.css"
+import Rightbar from "../components/dashboard/rightbar/Rightbar"
 
 const Page = () => {
   return (
@@ -18,7 +18,7 @@ const Page = () => {
         <Chart />
       </div>
       <div className={styles.side}>
-        <RightBar />
+        <Rightbar />
       </div>
     </div>
   )
