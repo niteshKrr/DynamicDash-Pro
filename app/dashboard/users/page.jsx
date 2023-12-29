@@ -52,7 +52,7 @@ const Page = async({ searchParams }) => {
             <td>active</td>
             <td>
               <div className={styles.buttons}>
-                <Link href={`/dashboard/users/`}>
+                <Link href={`/dashboard/users/12`}>
                   <button className={`${styles.button} ${styles.view}`}>
                     View
                   </button>
