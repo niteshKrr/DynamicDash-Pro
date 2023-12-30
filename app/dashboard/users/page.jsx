@@ -1,5 +1,5 @@
-// import { deleteUser } from "@/app/lib/actions";
-// import { fetchUsers } from "../../lib/data";
+import { deleteUser } from "../../lib/actions";
+import { fetchUsers } from "../../lib/data";
 import Search from '@/app/components/dashboard/search/Search'
 import styles from "../../components/dashboard/users/users.module.css"
 import Image from 'next/image'
@@ -10,7 +10,8 @@ const Page = async({ searchParams }) => {
 
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
-  // const { count, users } = await fetchUsers(q, page);
+  const { count, users } = await fetchUsers(q, page);
+  // console.log(q);
 
   return (
     <div className={styles.container}>
@@ -32,33 +33,33 @@ const Page = async({ searchParams }) => {
         </tr>
       </thead>
       <tbody>
-        {/* {users.map((user) => ( */}
-          <tr>
+        {users.map((user) => (
+          <tr key={user.id}>
             <td>
               <div className={styles.user}>
                 <Image
-                  src={"/noavatar.png"}
+                  src={user.img || "/noavatar.png"}
                   alt=""
                   width={40}
                   height={40}
                   className={styles.userImage}
                 />
-                Nitesh Kumar
+                {user.username}
               </div>
             </td>
-            <td>nkumar35101@gmail.com</td>
-            <td>28.12.2023</td>
-            <td>Admin</td>
-            <td>active</td>
+            <td>{user.email}</td>
+            <td>{user.createdAt?.toString().slice(4, 16)}</td>
+              <td>{user.isAdmin ? "Admin" : "Client"}</td>
+              <td>{user.isActive ? "active" : "passive"}</td>
             <td>
               <div className={styles.buttons}>
-                <Link href={`/dashboard/users/12`}>
+                <Link href={`/dashboard/users/${user.id}`}>
                   <button className={`${styles.button} ${styles.view}`}>
                     View
                   </button>
                 </Link>
-                <form action="">
-                  <input type="hidden" name="id" value="" />
+                <form action={deleteUser}>
+                  <input type="hidden" name="id" value={user.id} />
                   <button className={`${styles.button} ${styles.delete}`}>
                     Delete
                   </button>
@@ -66,10 +67,10 @@ const Page = async({ searchParams }) => {
               </div>
             </td>
           </tr>
-        {/* ))} */}
+        ))}
       </tbody>
     </table>
-    <Pagination count={2} />
+    <Pagination count={count} />
   </div>
   )
 }
