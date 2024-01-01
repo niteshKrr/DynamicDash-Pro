@@ -25,7 +25,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Sahil Patel
               </div>
             </td>
             <td>
@@ -33,7 +33,7 @@ const Transactions = () => {
                 Pending
               </span>
             </td>
-            <td>14.02.2024</td>
+            <td>14.02.2023</td>
             <td>$3.200</td>
           </tr>
           <tr>
@@ -46,14 +46,14 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Akash Kumar
               </div>
             </td>
             <td>
               <span className={`${styles.status} ${styles.done}`}>Done</span>
             </td>
-            <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>14.08.2023</td>
+            <td>$2.200</td>
           </tr>
           <tr>
             <td>
@@ -65,7 +65,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Avnish Kr. Aman
               </div>
             </td>
             <td>
@@ -73,8 +73,8 @@ const Transactions = () => {
                 Cancelled
               </span>
             </td>
-            <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>14.07.2023</td>
+            <td>$1.200</td>
           </tr>
           <tr>
             <td>
@@ -86,7 +86,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Raja Kumar
               </div>
             </td>
             <td>
@@ -94,8 +94,29 @@ const Transactions = () => {
                 Pending
               </span>
             </td>
-            <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>14.09.2023</td>
+            <td>$4.200</td>
+          </tr>
+          <tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src="/noavatar.png"
+                  alt=""
+                  width={40}
+                  height={40}
+                  className={styles.userImage}
+                />
+                Nitesh Kumar
+              </div>
+            </td>
+            <td>
+              <span className={`${styles.status} ${styles.done}`}>
+                Done
+              </span>
+            </td>
+            <td>14.12.2023</td>
+            <td>$1.200</td>
           </tr>
         </tbody>
       </table>

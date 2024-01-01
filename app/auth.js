@@ -33,7 +33,7 @@ export const { signIn, signOut, auth } = NextAuth({
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
-        console.log("credentials :", credentials);
+        // console.log("credentials :", credentials);
         try {
           const user = await login(credentials);
           return user;
