@@ -10,8 +10,8 @@ const LoginForm = () => {
   return (
     <form action={formAction} className={styles.form}>
       <h1 className="text-xl">Login</h1>
-      <input type="text" placeholder="username" name="username" />
-      <input type="password" placeholder="password" name="password" />
+      <input type="text" placeholder="username = nitesh_kr" name="username" />
+      <input type="password" placeholder="password = 12345" name="password" />
       <button>Login</button>
       {state && state}
     </form>
